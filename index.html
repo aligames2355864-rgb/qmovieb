@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 Q Movie - مشاهدة ٦ أيام</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+body {
+font-family: Arial, sans-serif;
+color: #fff;
+text-align: center;
+}
+
+/* --- مشغل الفيديو كامل الشاشة --- */
+#fullscreen-video {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1; /* تحت المحتوى */
+}
+
+/* --- محتوى الفيلم فوق الفيديو --- */
+.movie-content {
+position: relative;
+z-index: 1;
+max-width: 900px;
+margin: 50px auto;
+background-color: rgba(20,20,20,0.8);
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.movie-content h1 {
+color: #E50914;
+margin: 0 0 20px 0;
+font-size: 2.5em;
+}
+
+.movie-content h2 {
+font-size: 2em;
+color: #fff;
+margin-top: 0;
+}
+
+.movie-content p, .movie-content li {
+font-size: 1.1em;
+color: #ddd;
+line-height: 1.6;
+}
+
+.movie-content ul {
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+gap: 15px;
+justify-content: flex-start;
+}
+
+.movie-content ul li {
+background-color: #333;
+padding: 5px 10px;
+border-radius: 4px;
+}
+
+/* --- الفوتر --- */
+footer {
+margin-top: 20px;
+color: #aaa;
+font-size: 14px;
+}
+a { color: #E50914; text-decoration: none; }
+a:hover { text-decoration: underline; } </style>
+
+</head>
+<body>
+
+<video id="fullscreen-video" autoplay muted loop>
+  <source src="https://yourwebsite.com/videos/6days.mp4" type="video/mp4">
+  متصفحك لا يدعم عرض الفيديو.
+</video>
+
+<div class="movie-content">
+  <h1>🎬 Q Movie</h1>
+  <h2>٦ أيام (وعملت إيه فينا السنين)</h2>
+  <p>
+    فيلم دراما رومانسي. تدور الأحداث حول "يوسف" و "عالية" اللذين يلتقيان بعد سنوات طويلة من الفراق...
+  </p>
+  <h3>الأبطال:</h3>
+  <ul>
+    <li>أحمد مالك</li>
+    <li>آية سماحة</li>
+  </ul>
+  <h3>إخراج:</h3>
+  <p>كريم شعبان</p>
+  <h3>تأليف:</h3>
+  <p>وائل حمدي</p>
+</div>
+
+<footer>
+  &copy; 2025 كل الحقوق محفوظة | 
+  <a href="https://www.instagram.com/8_3w" target="_blank">Instagram</a>
+</footer>
+
+</body>
+</html>
