@@ -5,137 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎬 Q Movie - مشاهدة ٦ أيام</title>
 <style>
-/* --- الإعدادات العامة --- */
+/* (نفس الستايل والتصميم الكامل) */
 body {
-  background-color: #141414;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding-bottom: 100px;
+  background-color: #141414; color: #fff; font-family: Arial, sans-serif;
+  text-align: center; margin: 0; padding-bottom: 100px;
 }
 a { color: #E50914; text-decoration: none; }
 a:hover { text-decoration: underline; }
-
-/* --- الهيدر --- */
-header {
-  padding: 20px;
-  border-bottom: 1px solid #333;
-}
-header h1 {
-  color: #E50914;
-  margin: 0;
-  font-size: 2.5em;
-}
-
-/* --- حاوية الفيلم --- */
+header { padding: 20px; border-bottom: 1px solid #333; }
+header h1 { color: #E50914; margin: 0; font-size: 2.5em; }
 .movie-showcase {
-  max-width: 900px;
-  margin: 30px auto;
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  max-width: 900px; margin: 30px auto; background-color: #222;
+  border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
-
-/* --- مشغل الفيديو --- */
 .video-player {
-  position: relative;
-  /* (9 / 16 * 100%) = 56.25% */
-  padding-bottom: 56.25%; 
-  height: 0;
-  background-color: #000;
+  position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;
 }
-.video-player video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
+.video-player iframe {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
 }
-
-/* --- تفاصيل الفيلم --- */
-.movie-details {
-  padding: 25px;
-  text-align: right;
-}
+.movie-details { padding: 25px; text-align: right; }
 .movie-details h2 { font-size: 2em; color: #fff; margin-top: 0; }
 .movie-details p { color: #ddd; font-size: 1.1em; line-height: 1.6; }
 .info-section {
-  margin-top: 20px;
-  border-top: 1px solid #444;
-  padding-top: 20px;
+  margin-top: 20px; border-top: 1px solid #444; padding-top: 20px;
 }
 .info-section h3 { color: #aaa; font-size: 1.2em; margin-bottom: 10px; }
 .info-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 15px;
+  list-style: none; padding: 0; margin: 0; display: flex; gap: 15px;
 }
 .info-section ul li {
-  background-color: #333;
-  padding: 5px 10px;
-  border-radius: 4px;
+  background-color: #333; padding: 5px 10px; border-radius: 4px;
 }
-
-/* --- الفوتر --- */
-footer {
-  margin-top: 40px;
-  padding: 20px;
-  color: #aaa;
-  font-size: 14px;
-}
+footer { margin-top: 40px; padding: 20px; color: #aaa; font-size: 14px; }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>🎬 Q Movie</h1>
-</header>
-
+<header> <h1>🎬 Q Movie</h1> </header>
 <main>
   <div class="movie-showcase">
     
     <div class="video-player">
-      
-      <video controls style="width: 100%; height: 100%;">
-        <source src="https://filetolinkk-3e7ba9f554eb.herokuapp.com/stream/457492?hash=5b979c" type="video/mp4">
-        
-        المتصفح مالتك ما يدعم هذا الفيديو
-      </video>
-
+      <iframe src="https://drive.google.com/file/d/1WNheb3CRBO_yTfSozDsQcLmH26QeVsZm/preview" 
+              allowfullscreen="true" 
+              allow="fullscreen">
+      </iframe>
     </div>
     
     <div class="movie-details">
       <h2>٦ أيام (وعملت إيه فينا السنين)</h2>
-      
       <p class="description">
-        فيلم دراما رومانسي. تدور الأحداث حول "يوسف" و "عالية" اللذين يلتقيان بعد سنوات طويلة من الفراق الذي فُرض عليهما بسبب ظروف قهرية. تجمعهم الصدفة مرة أخرى بعد أن اتخذ كل منهما مساراً مختلفاً في حياته، ليفتحا ملفات الماضي ويتساءلا "عملت إيه فينا السنين؟".
+        فيلم دراما رومانسي. تدور الأحداث حول "يوسف" و "عالية"...
       </p>
-      
       <div class="info-section">
         <h3>الأبطال:</h3>
-        <ul>
-          <li>أحمد مالك</li>
-          <li>آية سماحة</li>
-        </ul>
+        <ul><li>أحمد مالك</li><li>آية سماحة</li></ul>
       </div>
-      
       <div class="info-section">
-        <h3>إخراج:</h3>
-        <p>كريم شعبان</p>
+        <h3>إخراج:</h3> <p>كريم شعبان</p>
       </div>
-
       <div class="info-section">
-        <h3>تأليف:</h3>
-        <p>وائل حمدي</p>
+        <h3>تأليف:</h3> <p>وائل حمدي</p>
       </div>
-      
     </div>
-    
   </div>
 </main>
 
