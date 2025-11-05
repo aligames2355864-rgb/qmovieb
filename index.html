@@ -1,117 +1,146 @@
 <!DOCTYPE html>
-
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎬 Q Movie - مشاهدة ٦ أيام</title>
 <style>
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow: hidden;
-  background: black;
-}
-
+/* --- الإعدادات العامة --- */
 body {
-font-family: Arial, sans-serif;
-color: #fff;
-text-align: center;
+  background-color: #141414;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 100px;
+}
+a { color: #E50914; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* --- الهيدر --- */
+header {
+  padding: 20px;
+  border-bottom: 1px solid #333;
+}
+header h1 {
+  color: #E50914;
+  margin: 0;
+  font-size: 2.5em;
 }
 
-/* --- مشغل الفيديو كامل الشاشة --- */
-#fullscreen-video {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: -1; /* تحت المحتوى */
+/* --- حاوية الفيلم --- */
+.movie-showcase {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #222;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-/* --- محتوى الفيلم فوق الفيديو --- */
-.movie-content {
-position: relative;
-z-index: 1;
-max-width: 900px;
-margin: 50px auto;
-background-color: rgba(20,20,20,0.8);
-border-radius: 10px;
-padding: 20px;
-box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+/* --- مشغل الفيديو --- */
+.video-player {
+  position: relative;
+  /* (9 / 16 * 100%) = 56.25% */
+  padding-bottom: 56.25%; 
+  height: 0;
+  background-color: #000;
+}
+.video-player video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.movie-content h1 {
-color: #E50914;
-margin: 0 0 20px 0;
-font-size: 2.5em;
+/* --- تفاصيل الفيلم --- */
+.movie-details {
+  padding: 25px;
+  text-align: right;
 }
-
-.movie-content h2 {
-font-size: 2em;
-color: #fff;
-margin-top: 0;
+.movie-details h2 { font-size: 2em; color: #fff; margin-top: 0; }
+.movie-details p { color: #ddd; font-size: 1.1em; line-height: 1.6; }
+.info-section {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 20px;
 }
-
-.movie-content p, .movie-content li {
-font-size: 1.1em;
-color: #ddd;
-line-height: 1.6;
+.info-section h3 { color: #aaa; font-size: 1.2em; margin-bottom: 10px; }
+.info-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
 }
-
-.movie-content ul {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-gap: 15px;
-justify-content: flex-start;
-}
-
-.movie-content ul li {
-background-color: #333;
-padding: 5px 10px;
-border-radius: 4px;
+.info-section ul li {
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 4px;
 }
 
 /* --- الفوتر --- */
 footer {
-margin-top: 20px;
-color: #aaa;
-font-size: 14px;
+  margin-top: 40px;
+  padding: 20px;
+  color: #aaa;
+  font-size: 14px;
 }
-a { color: #E50914; text-decoration: none; }
-a:hover { text-decoration: underline; } </style>
-
+</style>
 </head>
 <body>
 
-<video id="fullscreen-video" autoplay muted loop>
-  <source src="https://yourwebsite.com/videos/6days.mp4" type="video/mp4">
-  متصفحك لا يدعم عرض الفيديو.
-</video>
-
-<div class="movie-content">
+<header>
   <h1>🎬 Q Movie</h1>
-  <h2>٦ أيام (وعملت إيه فينا السنين)</h2>
-  <p>
-    فيلم دراما رومانسي. تدور الأحداث حول "يوسف" و "عالية" اللذين يلتقيان بعد سنوات طويلة من الفراق...
-  </p>
-  <h3>الأبطال:</h3>
-  <ul>
-    <li>أحمد مالك</li>
-    <li>آية سماحة</li>
-  </ul>
-  <h3>إخراج:</h3>
-  <p>كريم شعبان</p>
-  <h3>تأليف:</h3>
-  <p>وائل حمدي</p>
-</div>
+</header>
+
+<main>
+  <div class="movie-showcase">
+    
+    <div class="video-player">
+      
+      <video controls style="width: 100%; height: 100%;">
+        <source src="https://filetolinkk-3e7ba9f554eb.herokuapp.com/stream/457492?hash=5b979c" type="video/mp4">
+        
+        المتصفح مالتك ما يدعم هذا الفيديو
+      </video>
+
+    </div>
+    
+    <div class="movie-details">
+      <h2>٦ أيام (وعملت إيه فينا السنين)</h2>
+      
+      <p class="description">
+        فيلم دراما رومانسي. تدور الأحداث حول "يوسف" و "عالية" اللذين يلتقيان بعد سنوات طويلة من الفراق الذي فُرض عليهما بسبب ظروف قهرية. تجمعهم الصدفة مرة أخرى بعد أن اتخذ كل منهما مساراً مختلفاً في حياته، ليفتحا ملفات الماضي ويتساءلا "عملت إيه فينا السنين؟".
+      </p>
+      
+      <div class="info-section">
+        <h3>الأبطال:</h3>
+        <ul>
+          <li>أحمد مالك</li>
+          <li>آية سماحة</li>
+        </ul>
+      </div>
+      
+      <div class="info-section">
+        <h3>إخراج:</h3>
+        <p>كريم شعبان</p>
+      </div>
+
+      <div class="info-section">
+        <h3>تأليف:</h3>
+        <p>وائل حمدي</p>
+      </div>
+      
+    </div>
+    
+  </div>
+</main>
 
 <footer>
-  &copy; 2025 كل الحقوق محفوظة | 
+  <p>&copy; 2025 كل الحقوق محفوظة</p>
   <a href="https://www.instagram.com/8_3w" target="_blank">Instagram</a>
 </footer>
 
