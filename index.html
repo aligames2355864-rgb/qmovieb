@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🎬 Q Movie - مشاهدة ٦ أيام</title>
 <style>
-/* (نفس الستايل والتصميم الكامل) */
+/* --- الإعدادات العامة --- */
 body {
   background-color: #141414; color: #fff; font-family: Arial, sans-serif;
   text-align: center; margin: 0; padding-bottom: 100px;
@@ -14,17 +14,47 @@ a { color: #E50914; text-decoration: none; }
 a:hover { text-decoration: underline; }
 header { padding: 20px; border-bottom: 1px solid #333; }
 header h1 { color: #E50914; margin: 0; font-size: 2.5em; }
+
+/* --- حاوية الفيلم --- */
 .movie-showcase {
   max-width: 900px; margin: 30px auto; background-color: #222;
   border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
-.video-player {
-  position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;
+
+/* هنا التعديل:
+  شيلنا المشغل العاطل (video-player)
+  وخلينا "بوستر" بيه زر
+*/
+.movie-poster {
+  width: 100%;
+  height: 506px; /* (نفس أبعاد 16:9) */
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* (تقدر تخلي صورة بوستر هنا كخلفية) */
+  /* background-image: url('URL_TO_POSTER_IMAGE.jpg'); */
+  background-size: cover;
 }
-.video-player iframe {
-  position: absolute; top: 0; left: 0;
-  width: 100%; height: 100%; border: none;
+
+/* هذا الزر الجديد (شاهد الآن) */
+.play-button {
+  background-color: #E50914;
+  color: #fff;
+  font-size: 2em;
+  padding: 20px 40px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+.play-button:hover {
+  background-color: #b00710; /* لون أغمق عند الماوس */
+}
+
+/* (نفس ستايل التفاصيل والفوتر) */
 .movie-details { padding: 25px; text-align: right; }
 .movie-details h2 { font-size: 2em; color: #fff; margin-top: 0; }
 .movie-details p { color: #ddd; font-size: 1.1em; line-height: 1.6; }
@@ -47,11 +77,12 @@ footer { margin-top: 40px; padding: 20px; color: #aaa; font-size: 14px; }
 <main>
   <div class="movie-showcase">
     
-    <div class="video-player">
-      <iframe src="https://drive.google.com/file/d/1WNheb3CRBO_yTfSozDsQcLmH26QeVsZm/preview" 
-              allowfullscreen="true" 
-              allow="fullscreen">
-      </iframe>
+    <div class="movie-poster">
+      <a href="https://drive.google.com/file/d/1WNheb3CRBO_yTfSozDsQcLmH26QeVsZm/view?usp=sharing" 
+         class="play-button" 
+         target="_blank">
+        ▶️ شاهد الآن
+      </a>
     </div>
     
     <div class="movie-details">
