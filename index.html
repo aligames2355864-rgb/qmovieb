@@ -1,548 +1,103 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>q movie - الرئيسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waddah | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex_Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* 🔥🔥 الـ CSS الجمالي الذي تم اعتماده منك (النسخة المستقرة) 🔥🔥 */
-        :root {
-            --bg-color: #0d0d0d;
-            --card-color: #1a1a1a;
-            --text-color: #f5f5f5;
-            --accent-color: #e50914;
-            --sidebar-width: 280px;
-        }
-
         body {
-            font-family: 'Tajawal', sans-serif;
-            background: radial-gradient(circle at top, #141414, #000);
-            color: var(--text-color);
             margin: 0;
             padding: 0;
-            transition: margin-right 0.3s ease;
-        }
-
-        main {
-            padding: 20px;
-            transition: margin-right 0.3s ease;
-        }
-
-        /* 🎬 الهيدر (شريط الأدوات العلوي) */
-        header {
-            display: flex;
-            flex-direction: column; 
-            background: rgba(20, 20, 20, 0.7);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            margin-bottom: 20px;
-        }
-
-        /* 🔥🔥 الهيكلة الجديدة التي تمنع التداخل (الأزرار واللوجو) 🔥🔥 */
-        .header-top-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            width: 100%;
-        }
-
-        .logo {
-            font-size: 2em;
-            color: var(--accent-color);
-            font-weight: 700;
-            text-shadow: 0 0 10px rgba(229, 9, 20, 0.6);
-            flex-grow: 1; /* يسمح للوجو بدفع الأزرار لليمين */
-            text-align: right;
-            margin-right: 15px; 
-        }
-
-        #menu-toggle-btn {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 26px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        /* 🔥 شريط البحث (يبقى في سطر منفصل وأسفل الأزرار) */
-        #search-input {
-            width: 95%;
-            margin: 10px auto 15px; /* مسافة أعلى وأسفل */
-            padding: 12px;
-            border-radius: 30px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--text-color);
-            font-size: 16px;
-            transition: 0.3s;
-        }
-        #search-input:focus {
-            background-color: rgba(255, 255, 255, 0.2);
-            outline: none;
-        }
-
-        /* 🎬 أزرار الهيدر */
-        .header-actions {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-        }
-
-        .header-action-btn {
-            padding: 8px 14px;
-            border-radius: 25px;
-            font-size: 14px;
-            background: var(--accent-color);
+            background-color: #121212; /* خلفية داكنة مثل الصورة */
             color: white;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .header-action-btn:hover {
-            background: #b00710;
-            transform: scale(1.05);
-        }
-
-        #admin-panel-btn {
-            background-color: #007bff;
-        }
-
-        #contact-btn {
-            background-color: #4CAF50;
-        }
-
-        /* 🎬 القائمة الجانبية (Sidebar) */
-        #sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            top: 0;
-            right: 0;
-            background: #111;
-            z-index: 100;
-            transition: width 0.3s ease;
-            padding-top: 20px;
-            overflow-y: auto;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.8);
-        }
-        #sidebar.open {
-            width: var(--sidebar-width);
-            padding-right: 10px;
-        }
-
-        .sidebar-category-link {
-            padding: 12px 20px;
-            color: var(--text-color);
-            display: block;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: background 0.3s;
-            text-align: right;
-        }
-
-        .sidebar-category-link:hover,
-        .sidebar-category-link.active {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        body.sidebar-open main {
-            margin-right: var(--sidebar-width);
-        }
-
-        /* 🎬 أزرار التصنيفات */
-        #category-filter {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 25px 0;
             justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        .category-btn {
-            padding: 8px 16px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.3s;
-        }
-
-        .category-btn.active,
-        .category-btn:hover {
-            background-color: var(--accent-color);
-            color: #fff;
-            transform: scale(1.05);
-        }
-
-        /* 🎬 شبكة الأفلام */
-        #movie-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-            gap: 22px;
-            padding-top: 10px;
-            animation: fadeIn 0.6s ease-in;
-        }
-
-        .movie-item {
-            background-color: var(--card-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            text-decoration: none;
-        }
-
-        .movie-item:hover {
-            transform: scale(1.06);
-            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
-        }
-
-        .movie-item img {
-            width: 100%;
-            height: 270px; /* 🔥 الارتفاع الذي يعجبك */
-            object-fit: cover;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .movie-item h3 {
-            padding: 10px;
-            font-size: 1em;
+        .card {
             text-align: center;
-            color: #eee;
-            margin: 0;
-        }
-
-        /* 🔥 تصميم التاجات والتقييم */
-        .movie-rating {
-            top: 10px; right: 10px;
-            background-color: var(--accent-color);
-            color: gold; padding: 4px 8px; border-radius: 6px; font-size: 0.9em;
-            position: absolute; font-weight: bold;
-        }
-        .movie-category-tag {
-            bottom: 40px; left: 0; 
-            background-color: rgba(0, 123, 255, 0.85);
-            color: white; padding: 4px 10px; border-radius: 0 6px 6px 0;
-            font-size: 0.8em; position: absolute; font-weight: bold;
-        }
-        .movie-type-tag { 
-            top: 10px; left: 10px;
-            background-color: #4CAF50; 
-            color: white; padding: 3px 8px; border-radius: 6px; font-size: 0.8em;
-            position: absolute; font-weight: bold;
-        }
-        
-        /* 🔥 تصميم الإعلان الترويجي */
-        #main-banner {
-            height: 300px; 
-            border-radius: 12px; 
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            display: none; 
-            align-items: flex-end;
-            text-decoration: none; 
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        #banner-info {
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
-            padding: 20px;
             width: 100%;
+            max-width: 350px;
+        }
+
+        /* الإطار الملون حول الصورة */
+        .image-container {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 8px; /* المسافة بين الصورة والإطار */
+            background: linear-gradient(45deg, #00f2fe, #4facfe, #7000ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #121212; /* فجوة بسيطة بين الصورة والإطار */
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        .title {
+            color: #b0b0b0;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            background-color: #2a2a2a;
             color: white;
-            border-radius: 0 0 12px 12px;
-            text-align: right;
-        }
-        #banner-title {
-            font-size: 2em;
-            margin: 0;
-            color: white;
-        }
-
-
-        /* 🎬 تأثير دخول ناعم */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: 0.3s ease;
+            border: 1px solid #3d3d3d;
         }
 
-        /* 🎬 الموبايل */
-        @media (max-width: 600px) {
-             header { padding: 10px; }
-             .header-top-row { width: 100%; margin-bottom: 5px; }
-             .logo { font-size: 1.8em; margin-right: 0; text-align: left; }
-             #search-input { margin: 10px 0; }
-             .header-actions { width: 100%; justify-content: space-between; margin-top: 10px; }
-             #movie-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
-             .movie-item img { height: 195px; }
+        .btn:hover {
+            background-color: #3d3d3d;
+            transform: translateY(-3px);
+            border-color: #4facfe;
         }
     </style>
 </head>
 <body>
 
-    <div id="sidebar">
-        <button id="close-sidebar-btn" class="sidebar-category-link" onclick="toggleSidebar()" style="color: #ccc;">إغلاق X</button>
-        <h3 style="padding: 0 15px; text-align: right; color: var(--accent-color);">تصفح حسب التصنيف</h3>
-        <div id="sidebar-categories"></div>
+    <div class="card">
+        <div class="image-container">
+            <img src="waddah.jpg" alt="Waddah" class="profile-img">
+        </div>
+        
+        <h1>وضاح</h1>
+        <div class="title">Software Developer</div>
+
+        <div class="links">
+            <a href="#" class="btn">GitHub</a>
+            <a href="#" class="btn">LinkedIn</a>
+            <a href="#" class="btn">Contact Me</a>
+        </div>
     </div>
 
-    <main id="main-content">
-        <header>
-            <div class="header-top-row">
-                <button id="menu-toggle-btn" onclick="toggleSidebar()">☰</button>
-                <div class="logo">q movie</div>
-                
-                <div class="header-actions">
-                    <a href="contact.html" id="contact-btn" class="header-action-btn" style="background-color: #4CAF50;">تواصل معنا</a> 
-                    <div class="admin-controls"></div> 
-                    <button id="logout-btn" class="header-action-btn">تسجيل خروج</button>
-                </div>
-            </div>
-            <input type="text" id="search-input" placeholder="ابحث عن فيلم...">
-        </header>
-
-        <a id="main-banner" href="#">
-            <div id="banner-info">
-                <h2 id="banner-title"></h2>
-                <p id="banner-description"></p>
-            </div>
-        </a>
-
-        <div id="category-filter">
-            </div>
-
-        <div id="movie-grid"></div>
-        <div id="loader">...جاري تحميل الأفلام</div>
-    </main>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-
-    <script>
-        // ================ (1) إعدادات Firebase ================
-        const firebaseConfig = {
-            apiKey: "AIzaSyBApoSZ-HXy9kd07tSJfuRdWkJcrbQVYf0", 
-            authDomain: "qmove1.firebaseapp.com",
-            projectId: "qmove1",
-            storageBucket: "qmove1.appspot.com",
-            messagingSenderId: "166464805371",
-            appId: "1:166464805371:web:d65b0cb8b141e4b894935e"
-        };
-        
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        const auth = firebase.auth();
-        
-        const ADMIN_UID = 'rHIJXeazJiMsgAc1HDRO3vzFFV02'; 
-
-        // عناصر التحكم
-        const grid = document.getElementById('movie-grid');
-        const loader = document.getElementById('loader');
-        const searchInput = document.getElementById('search-input');
-        const logoutBtn = document.getElementById('logout-btn');
-        const adminControls = document.querySelector('.header-actions .admin-controls'); 
-        const bannerElement = document.getElementById('main-banner');
-        const categoryFilter = document.getElementById('category-filter');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarCategories = document.getElementById('sidebar-categories');
-        const body = document.body;
-
-        let allContent = []; 
-        let currentFilter = 'all';
-
-        // 🔥 دالة فتح وإغلاق القائمة الجانبية
-        function toggleSidebar() {
-            if (sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-                body.classList.remove('sidebar-open');
-            } else {
-                sidebar.classList.add('open');
-                body.classList.add('sidebar-open');
-            }
-        }
-        document.getElementById('close-sidebar-btn').onclick = toggleSidebar;
-
-
-        // ================ (2) جلب وعرض الأفلام والمسلسلات ================
-        async function fetchContent() {
-            try {
-                // 1. جلب الأفلام (Movies)
-                const moviesSnapshot = await db.collection('movies').orderBy('timestamp', 'desc').get();
-                const movies = moviesSnapshot.docs.map(doc => ({ id: doc.id, type: 'movie', ...doc.data() }));
-
-                // 2. جلب المسلسلات (Series)
-                const seriesSnapshot = await db.collection('series').orderBy('timestamp', 'desc').get();
-                const series = seriesSnapshot.docs.map(doc => ({ id: doc.id, type: 'series', ...doc.data() }));
-
-                allContent = [...movies, ...series];
-                
-                if (allContent.length === 0) { loader.textContent = 'ماكو محتوى حالياً.'; return; }
-                
-                allContent.sort((a, b) => (b.timestamp?.seconds || 0) - (a.timestamp?.seconds || 0));
-
-                setupBanner(allContent);
-                setupCategoryButtons(allContent); 
-                setupSidebarCategories(allContent); 
-
-                displayContent(allContent); 
-                loader.style.display = 'none';
-            } catch (error) { 
-                console.error("خطأ بجلب المحتوى: ", error);
-                loader.textContent = 'حدث خطأ. حاول تحدث الصفحة.';
-            }
-        }
-        
-        // 🔥 دالة عرض الإعلان الترويجي
-        function setupBanner(content) {
-            const featuredMovie = content.find(item => item.type === 'movie' && item.isFeatured && item.bannerUrl);
-
-            if (featuredMovie) {
-                bannerElement.style.display = 'flex';
-                bannerElement.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('${featuredMovie.bannerUrl}')`;
-                bannerElement.href = `./movie.html?id=${featuredMovie.id}`; 
-                document.getElementById('banner-title').textContent = featuredMovie.title || 'فيلم مميز';
-                document.getElementById('banner-description').textContent = featuredMovie.description || 'شاهد الآن أحدث الأفلام المميزة!';
-            } else {
-                bannerElement.style.display = 'none'; 
-            }
-        }
-        
-        function setupSidebarCategories(content) {
-            const categories = new Set(content.map(m => m.category).filter(c => c && c !== 'all'));
-            sidebarCategories.innerHTML = '';
-            
-            const allLink = document.createElement('a');
-            allLink.href = '#';
-            allLink.className = 'sidebar-category-link active';
-            allLink.textContent = 'الكل';
-            allLink.onclick = (e) => { e.preventDefault(); handleCategoryFilter(e, 'all', true); };
-            sidebarCategories.appendChild(allLink);
-
-            categories.forEach(category => {
-                const link = document.createElement('a');
-                link.href = '#';
-                link.className = 'sidebar-category-link';
-                link.textContent = category;
-                link.onclick = (e) => { e.preventDefault(); handleCategoryFilter(e, category, true); };
-                sidebarCategories.appendChild(link);
-            });
-        }
-        
-        function setupCategoryButtons(content) {
-            const categories = new Set(content.map(m => m.category).filter(c => c));
-            categoryFilter.innerHTML = '<button class="category-btn active" data-category="all">الكل</button>';
-
-            categories.forEach(category => {
-                if (category === 'all') return;
-                const button = document.createElement('button');
-                button.className = 'category-btn';
-                button.textContent = category;
-                button.dataset.category = category;
-                button.onclick = (e) => handleCategoryFilter(e, category, false);
-                categoryFilter.appendChild(button);
-            });
-        }
-        
-        function handleCategoryFilter(event, category, isSidebar) {
-            currentFilter = category;
-
-            const buttons = document.querySelectorAll('.category-btn');
-            const links = document.querySelectorAll('.sidebar-category-link');
-            
-            buttons.forEach(btn => btn.classList.remove('active'));
-            links.forEach(link => link.classList.remove('active'));
-            
-            if (event.target) {
-                event.target.classList.add('active');
-            } else {
-                buttons.forEach(btn => { if (btn.dataset.category === category) btn.classList.add('active'); });
-                links.forEach(link => { if (link.textContent.trim() === category || (category === 'all' && link.textContent.trim() === 'الكل')) link.classList.add('active'); });
-            }
-            
-            if (isSidebar) {
-                toggleSidebar(); 
-            }
-            
-            filterAndDisplayContent();
-        }
-
-        function filterAndDisplayContent() {
-             const searchTerm = searchInput.value.toLowerCase();
-             
-             let filteredContent = allContent;
-
-             if (currentFilter !== 'all') {
-                filteredContent = filteredContent.filter(item => item.category === currentFilter);
-             }
-
-             if (searchTerm) {
-                filteredContent = filteredContent.filter(item => {
-                    return item.title.toLowerCase().includes(searchTerm);
-                });
-             }
-
-             displayContent(filteredContent);
-        }
-
-        function displayContent(contentList) {
-            grid.innerHTML = ''; 
-            if (contentList.length === 0) {
-                 grid.innerHTML = '<p style="text-align: center; font-size: 1.2em;">عفواً، لا يوجد محتوى مطابق.</p>';
-                 return;
-            }
-
-            contentList.forEach(item => {
-                const itemLink = document.createElement('a');
-                itemLink.href = item.type === 'movie' ? `./movie.html?id=${item.id}` : `./series_watch.html?seriesId=${item.id}`;
-                itemLink.className = 'movie-item';
-                
-                const ratingDisplay = item.rating ? `<div class="movie-rating">⭐ ${item.rating.toFixed(1)}</div>` : '';
-                const categoryTag = item.category ? `<div class="movie-category-tag">${item.category}</div>` : '';
-                
-                const typeTag = item.type === 'series' ? `<div class="movie-type-tag" style="background-color: #4CAF50;">مسلسل</div>` : '';
-
-                itemLink.innerHTML = `
-                    <img src="${item.posterUrl}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/180x270?text=No+Image';">
-                    ${ratingDisplay}
-                    ${categoryTag}
-                    ${typeTag}
-                    <h3>${item.title}</h3>
-                `;
-                grid.appendChild(itemLink);
-            });
-        }
-        
-        // 🔥 دالة عرض الإعلان الترويجي
-        function setupBanner(content) {
-            const featuredMovie = content.find(item => item.type === 'movie' && item.isFeatured && item.bannerUrl);
-
-            if (featuredMovie) {
-                bannerElement.style.display = 'flex';
-                bannerElement.style.backgroundImage = `linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url('${featuredMovie.bannerUrl}')`;
-                bannerElement.href = `./movie.html?id=${featuredMovie.id}`; 
-                document.getElementById('banner-title').textContent = featuredMovie.title || 'فيلم مميز';
-                document.getElementById('banner-description').textContent = featuredMovie.description || 'شاهد الآن أحدث الأفلام المميزة!';
-            } else {
-                bannerElement.style.display = 'none'; 
-            }
-        }
-
-
-        // ================ (3) الحارس الأمني (السكيورتي) ================
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                if (user.uid === ADMIN_UID) {
-                    adminControls.innerHTML = `<a href="./admin_control.html" id="admin-panel-btn" class
+</body>
+</html>
